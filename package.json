@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "build": "cd client/ && npm install && npm run build",
     "install-client": "cd client && npm install",
-    "server": "nodemon index.js",
+    "server": "node server.js",
     "client": "npm start --prefix client",
     "test": "mocha",
     "dev": "concurrently \"npm run server\" \"npm run client\""
