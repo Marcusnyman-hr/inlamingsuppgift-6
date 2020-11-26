@@ -29,18 +29,18 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      connectSrc: ["'self'", 'https://checkout.stripe.com'],
-      frameSrc: ["'self'", 'https://checkout.stripe.com'],
-      childSrc: ["'self'", 'https://checkout.stripe.com'],
-      scriptSrc: ["'self'", 'https://checkout.stripe.com'],
+      connectSrc: ["'self'"],
+      frameSrc: ["'self'"],
+      childSrc: ["'self'"],
+      scriptSrc: ["'self'"],
       styleSrc: [
         "'self'",
         'https://fonts.googleapis.com',
-        'https://checkout.stripe.com',
       ],
-      fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-      imgSrc: ["'self'", 'https://*.stripe.com', 'https://res.cloudinary.com'],
+      fontSrc: ["'self'", 'https://fonts.googleapis.com'],
+      imgSrc: ["'self'"],
       baseUri: ["'self'"],
+      connectSrc: ["'self'"],
     },
   })
 );
