@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "cd client && npm run build",
+    "build": "cd client/ && npm install && npm run build",
     "install-client": "cd client && npm install",
     "server": "nodemon index.js",
     "client": "npm start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "test": "mocha",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
