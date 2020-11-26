@@ -37,7 +37,7 @@ app.use(
         "'self'",
         'https://fonts.googleapis.com',
       ],
-      fontSrc: ["'self'", 'https://fonts.googleapis.com'],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com/'],
       imgSrc: ["'self'"],
       baseUri: ["'self'"],
       connectSrc: ["'self'"],
