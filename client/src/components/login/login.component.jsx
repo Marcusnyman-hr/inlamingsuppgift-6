@@ -26,7 +26,7 @@ function Login({history}) {
   //Handle form submits
   function handleSubmit(event) {
     event.preventDefault()
-    const url = 'http://localhost:5000/api/user/login';
+    const url = 'http://localhost/api/user/login';
     const userLoggingIn = {
       username: user.username,
       password: user.password
