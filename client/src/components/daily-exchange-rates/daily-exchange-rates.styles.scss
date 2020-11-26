@@ -1,0 +1,13 @@
+.daily-exchange-rates {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  border: white solid 2px;
+  padding: 10px;
+  background-color: rgba(1,1,1,0.7);
+}
+.daily-exchange-rates h4 {
+  margin-bottom: 10px;
+}

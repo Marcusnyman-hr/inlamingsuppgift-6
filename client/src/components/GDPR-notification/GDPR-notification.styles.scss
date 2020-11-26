@@ -1,0 +1,39 @@
+
+.GDPRnotification {
+  height: 100vh;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.GDPRinfo {
+  display: flex;
+  flex-direction: column;
+}
+.gdpr-accept {
+  display: block;
+  color: black;
+  height: 40px;
+  width: 170px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto;
+
+  &:hover {
+    background-color: rgb(134, 133, 133);
+  }
+}
+a {
+  display: block;
+}
+
+.privacy-policy {
+
+  border: black solid 3px;
+  width: 80%;
+  height: 600px;
+  overflow-y: scroll;
+}

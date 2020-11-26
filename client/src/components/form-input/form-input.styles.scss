@@ -1,0 +1,62 @@
+@mixin active {
+  bottom: 18px;
+}
+
+.form-group {
+  position: relative;
+  margin-top: 20px;
+}
+/* .form-group label {
+  position: absolute;
+  color: green;
+} */
+.form-input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: white 2px solid;
+  color: white;
+  font-size: 14px;
+  padding: 2px 15px 2px 2px;
+
+  &:focus ~ .form-input-label {
+    @include active();
+  }
+  &:focus ~ .form-input-icon {
+    color: green;
+  }
+}
+.form-input-label {
+  position: absolute;
+  left: 0px;
+  transition: 400ms ease all;
+  pointer-events: none;
+
+  &.active{
+    @include active();
+  }
+}
+
+
+.form-input-icon {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  width: 10px;
+  background-color: transparent;
+  transition: 400ms ease all;
+}
+
+.form-input-icon i {
+  font-size: 10px;
+}
+
+/* Remove spinner buttons on numberinput */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}

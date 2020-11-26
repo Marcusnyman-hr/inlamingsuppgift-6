@@ -1,0 +1,18 @@
+.money-summary {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.money-summary-sum {
+  margin-left: 10px;
+  color: green;
+}
+
+.minus {
+  color: red;
+}
