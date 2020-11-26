@@ -32,7 +32,7 @@ app.use(
       connectSrc: ["'self'"],
       frameSrc: ["'self'"],
       childSrc: ["'self'"],
-      scriptSrc: ["'self'"],
+      scriptSrc: ["'self'", 'unsafe-inline'],
       styleSrc: [
         "'self'",
         'https://fonts.googleapis.com',
