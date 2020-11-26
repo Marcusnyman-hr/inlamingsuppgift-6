@@ -25,7 +25,21 @@ mongoose.connect(process.env.DB_CONNECT,
 //middlewares
 app.use(express.json())
 app.use(cors());
-app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      connectSrc: ["'self'"],
+      frameSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'"],
+    }
+  })
+);
+app.use((req, res, next) => {
+  console.log('CSP', res.get('Content-Security-Policy'));
+  next();
+});
 
 //Serve static assets if in prod
 if (process.env.NODE_ENV === 'production') {
