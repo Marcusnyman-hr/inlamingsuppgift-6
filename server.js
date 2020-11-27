@@ -33,7 +33,7 @@ app.use(
       connectSrc: ["'self'", 'https://checkout.stripe.com', 'https://ka-f.fontawesome.com'],
       frameSrc: ["'self'", 'https://checkout.stripe.com'],
       childSrc: ["'self'", 'https://checkout.stripe.com'],
-      scriptSrc: ["'self'", 'unsafe-inline', 'https://checkout.stripe.com', 'https://kit.fontawesome.com'],
+      scriptSrc: ["'self'", "'unsafe-inline'", 'https://checkout.stripe.com', 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
         "'unsafe-inline'",
