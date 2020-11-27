@@ -39,7 +39,7 @@ app.use(
         "'unsafe-inline'",
         'https://fonts.googleapis.com',
         'https://checkout.stripe.com',
-        "'https://kit.fontawesome.com'"
+        'https://kit.fontawesome.com'
       ],
       fontSrc: ["'self'", 'https://fonts.gstatic.com', 'https://ka-f.fontawesome.com'],
       imgSrc: ["'self'", 'https://*.stripe.com', 'https://res.cloudinary.com'],
