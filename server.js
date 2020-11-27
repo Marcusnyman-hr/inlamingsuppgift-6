@@ -36,7 +36,7 @@ app.use(
       scriptSrcElem: ["'self'", "'unsafe-inline'", 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
-        'unsafe-inline',
+        '"unsafe-inline"',
         'https://fonts.googleapis.com',
 
       ],
