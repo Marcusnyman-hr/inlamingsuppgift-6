@@ -40,7 +40,7 @@ app.use(
       fontSrc: ["'self'", 'https://fonts.gstatic.com/'],
       imgSrc: ["'self'"],
       baseUri: ["'self'"],
-      connectSrc: ["'self'"],
+      connectSrc: ["'self'", 'https://ka-f.fontawesome.com/'],
     },
   })
 );
