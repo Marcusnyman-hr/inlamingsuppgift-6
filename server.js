@@ -25,32 +25,32 @@ mongoose.connect(process.env.DB_CONNECT,
 //middlewares
 app.use(express.json())
 app.use(cors());
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       connectSrc: ["'self'"],
-//       frameSrc: ["'self'"],
-//       childSrc: ["'self'"],
-//       scriptSrc: ["'self'", 'unsafe-inline', 'https://kit.fontawesome.com'],
-//       scriptSrcElem: ["'self'", 'unsafe-inline', 'https://kit.fontawesome.com'],
-//       styleSrc: [
-//         "'self'",
-//         'unsafe-inline',
-//         'https://fonts.googleapis.com',
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      connectSrc: ["'self'"],
+      frameSrc: ["'self'"],
+      childSrc: ["'self'"],
+      scriptSrc: ["'self'", 'unsafe-inline', 'https://kit.fontawesome.com'],
+      scriptSrcElem: ["'self'", 'unsafe-inline', 'https://kit.fontawesome.com'],
+      styleSrc: [
+        "'self'",
+        'unsafe-inline',
+        'https://fonts.googleapis.com',
 
-//       ],
-//       fontSrc: ["'self'", 'https://fonts.gstatic.com/'],
-//       imgSrc: ["'self'"],
-//       baseUri: ["'self'"],
-//       connectSrc: ["'self', 'https://ka-f.fontawesome.com/'"],
-//     },
-//   })
-// );
-// app.use((req, res, next) => {
-//   console.log('CSP', res.get('Content-Security-Policy'));
-//   next();
-// });
+      ],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com/'],
+      imgSrc: ["'self'"],
+      baseUri: ["'self'"],
+      connectSrc: ["'self', 'https://ka-f.fontawesome.com/'"],
+    },
+  })
+);
+app.use((req, res, next) => {
+  console.log('CSP', res.get('Content-Security-Policy'));
+  next();
+});
 
 //Serve static assets if in prod
 if (process.env.NODE_ENV === 'production') {
