@@ -25,36 +25,33 @@ mongoose.connect(process.env.DB_CONNECT,
 //middlewares
 app.use(express.json())
 app.use(cors());
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       connectSrc: ["'self'"],
-//       frameSrc: ["'self'"],
-//       childSrc: ["'self'"],
-//       scriptSrc: ["'self'", 'unsafe-inline'],
-//       styleSrc: [
-//         "'self'",
-//         'https://fonts.googleapis.com',
-//       ],
-//       fontSrc: ["'self'", 'https://fonts.gstatic.com/'],
-//       imgSrc: ["'self'"],
-//       baseUri: ["'self'"],
-//       connectSrc: ["'self'"],
-//     },
-//   })
-// );
-// app.use((req, res, next) => {
-//   console.log('CSP', res.get('Content-Security-Policy'));
-//   next();
-// });
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      connectSrc: ["'self'"],
+      frameSrc: ["'self'"],
+      childSrc: ["'self'"],
+      scriptSrc: ["'self'", 'unsafe-inline', 'https://kit.fontawesome.com'],
+      styleSrc: [
+        "'self'",
+        'https://fonts.googleapis.com',
+      ],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com/'],
+      imgSrc: ["'self'"],
+      baseUri: ["'self'"],
+      connectSrc: ["'self'"],
+    },
+  })
+);
+app.use((req, res, next) => {
+  console.log('CSP', res.get('Content-Security-Policy'));
+  next();
+});
 
 //Serve static assets if in prod
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.resolve(__dirname, './client/build')));
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  // })
 }
 
 
