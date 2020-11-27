@@ -36,6 +36,7 @@ app.use(
       scriptSrc: ["'self'", 'unsafe-inline', 'https://checkout.stripe.com', 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
+        'unsafe-inline',
         'https://fonts.googleapis.com',
         'https://checkout.stripe.com',
         'https://kit.fontawesome.com'
