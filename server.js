@@ -41,7 +41,7 @@ app.use(
         'https://checkout.stripe.com',
         "'https://kit.fontawesome.com'"
       ],
-      fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com', 'https://ka-f.fontawesome.com'],
       imgSrc: ["'self'", 'https://*.stripe.com', 'https://res.cloudinary.com'],
       baseUri: ["'self'"],
     },
