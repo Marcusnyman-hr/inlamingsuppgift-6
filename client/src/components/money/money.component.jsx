@@ -76,7 +76,7 @@ export default function Money() {
 
   //add a new entry 
   function addEntry(newEntry) {
-    const url = 'http://localhost:5000/api/money/add'
+    const url = '/api/money/add'
     const token = authToken.token;
     axios.post(url, newEntry, {headers: {'auth-token': token}})
     .then((res) => {
@@ -97,7 +97,7 @@ export default function Money() {
 
   //Edit existing entry
   function editExistingEntry(updatedEntry){
-    const url = `http://localhost:5000/api/money/update/${updatedEntry.account}`
+    const url = `/api/money/update/${updatedEntry.account}`
     const token = authToken.token;
     axios.post(url, updatedEntry, {headers: {'auth-token': token}})
     .then((res) => {
@@ -113,7 +113,7 @@ export default function Money() {
 
   //Delete entry
   function deleteEntry(id, account) {
-    const url = 'http://localhost:5000/api/money/delete'
+    const url = '/api/money/delete'
     const token = authToken.token;
     const entryToDelete = {
       id,
@@ -163,7 +163,7 @@ export default function Money() {
 
   //Fetch the users income and expense entries and set them in state
   function fetchUsersEntries() {
-    const apiUrl = 'http://localhost:5000/api/money'
+    const apiUrl = '/api/money'
     const token = authToken.token;
     axios.get(apiUrl, {headers: {"auth-token": token}})
     .then((response) => {   

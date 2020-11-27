@@ -3,8 +3,7 @@
 }
 .login-and-register-form-container {
   width: 40%;
-  background-color: aqua;
-  /* background-color: #151515; */
+  background-color: #151515;
   border-right: #65665F solid 2px;
   display: flex;
   flex-direction: column;
@@ -14,9 +13,9 @@
 .login-register-link {
   margin-top: 20px;
   cursor: pointer;
-  /* &:hover {
+  &:hover {
     font-weight: bold;
-  }  */
+  }
 }
 .login-hero {
   width: 60%;
