@@ -33,10 +33,10 @@ app.use(
       connectSrc: ["'self'", 'https://checkout.stripe.com', 'https://ka-f.fontawesome.com'],
       frameSrc: ["'self'", 'https://checkout.stripe.com'],
       childSrc: ["'self'", 'https://checkout.stripe.com'],
-      scriptSrc: ["'self'", "'unsafe-inline'", 'https://checkout.stripe.com', 'https://kit.fontawesome.com'],
+      scriptSrc: ["'self'", 'https://arcane-inlet-02526.herokuapp.com/', 'https://checkout.stripe.com', 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
-        "'unsafe-inline'",
+        'https://arcane-inlet-02526.herokuapp.com/',
         'https://fonts.googleapis.com',
         'https://checkout.stripe.com',
         'https://kit.fontawesome.com'
