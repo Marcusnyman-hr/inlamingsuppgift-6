@@ -33,10 +33,10 @@ app.use(
       frameSrc: ["'self'"],
       childSrc: ["'self'"],
       scriptSrc: ["'self'", 'unsafe-inline', 'https://kit.fontawesome.com'],
-      scriptSrcElem: ["'self'", "'unsafe-inline'", 'https://kit.fontawesome.com'],
+      scriptSrcElem: ["'self'", 'unsafe-inline', 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
-        '"unsafe-inline"',
+        'unsafe-inline',
         'https://fonts.googleapis.com',
 
       ],
