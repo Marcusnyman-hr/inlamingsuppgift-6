@@ -51,10 +51,11 @@ app.use(cors());
 
 //Serve static assets if in prod
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.resolve(__dirname, './client/build')));
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  // })
+  app.use(express.static(path.resolve(__dirname, '/client/build')));
+  app.get('*', function (request, response) {
+    response.sendFile(path.resolve(__dirname, '/client/build', 'index.html'));
+  });
+
 }
 
 
@@ -62,9 +63,6 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/user', authRoute);
 app.use('/api/money', moneyRoute);
 
-app.get('*', function (request, response) {
-  response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
-});
 
 //start the server
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));
