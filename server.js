@@ -33,7 +33,7 @@ app.use(
       frameSrc: ["'self'"],
       childSrc: ["'self'"],
       scriptSrc: ["'self'", 'unsafe-inline', 'https://kit.fontawesome.com'],
-      scriptSrcElem: ["'self'", 'unsafe-inline', 'https://kit.fontawesome.com'],
+      scriptSrcElem: ["'self'", "'unsafe-inline'", 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
         'unsafe-inline',
@@ -43,7 +43,7 @@ app.use(
       fontSrc: ["'self'", 'https://fonts.gstatic.com/'],
       imgSrc: ["'self'"],
       baseUri: ["'self'"],
-      connectSrc: ["'self'", 'https://ka-f.fontawesome.com/'],
+      connectSrc: ["'self', 'https://ka-f.fontawesome.com/'"],
     },
   })
 );
