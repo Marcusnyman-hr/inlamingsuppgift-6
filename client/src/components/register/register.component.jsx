@@ -23,7 +23,7 @@ class Register extends Component {
   handleSubmit = (event) => {
     const {name, lastName, email, username, password} = this.state;
     event.preventDefault()
-    const url = 'http://localhost:5000/api/user/register';
+    const url = '/api/user/register';
     const user = {
       name,
       lastName,
