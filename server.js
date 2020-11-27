@@ -33,7 +33,7 @@ app.use(
       connectSrc: ["'self'", 'https://checkout.stripe.com'],
       frameSrc: ["'self'", 'https://checkout.stripe.com'],
       childSrc: ["'self'", 'https://checkout.stripe.com'],
-      scriptSrc: ["'self'", 'https://checkout.stripe.com'],
+      scriptSrc: ["'self'", , 'unsafe-inline', 'https://checkout.stripe.com', 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
         'https://fonts.googleapis.com',
