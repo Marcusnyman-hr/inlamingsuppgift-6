@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Login from '../login/login.component'
 import Register from '../register/register.component'
-import './login-and-register.styles.scss';
+import './login-and-register.styles.css';
 
 //Component for that contains login and register components.
 export default function LoginAndRegister() {
