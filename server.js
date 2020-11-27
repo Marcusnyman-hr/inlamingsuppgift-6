@@ -30,10 +30,10 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      connectSrc: ["'self'", 'https://checkout.stripe.com'],
+      connectSrc: ["'self'", 'https://checkout.stripe.com', 'https://ka-f.fontawesome.com'],
       frameSrc: ["'self'", 'https://checkout.stripe.com'],
       childSrc: ["'self'", 'https://checkout.stripe.com'],
-      scriptSrc: ["'self'", , 'unsafe-inline', 'https://checkout.stripe.com', 'https://kit.fontawesome.com'],
+      scriptSrc: ["'self'", 'unsafe-inline', 'https://checkout.stripe.com', 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
         'https://fonts.googleapis.com',
