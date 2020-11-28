@@ -7,11 +7,11 @@ https://arcane-inlet-02526.herokuapp.com/
 ## To run
 npm run dev
 ## or:
-cd client
-npm install
-npm start
-cd ..
-npm start
+1. cd client
+2. npm install
+3. npm start
+4. cd ..
+5. npm start
 ---------------------------------------
 # Assignment:
 
