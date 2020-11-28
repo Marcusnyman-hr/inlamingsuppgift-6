@@ -30,19 +30,17 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      connectSrc: ["'self'", 'https://checkout.stripe.com', 'https://ka-f.fontawesome.com'],
-      frameSrc: ["'self'", 'https://checkout.stripe.com'],
-      childSrc: ["'self'", 'https://checkout.stripe.com'],
-      scriptSrc: ["'self'", 'https://arcane-inlet-02526.herokuapp.com/', 'https://checkout.stripe.com', 'https://kit.fontawesome.com'],
+      connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
+      frameSrc: ["'self'"],
+      childSrc: ["'self'"],
+      scriptSrc: ["'self'", 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
-        'https://arcane-inlet-02526.herokuapp.com/',
         'https://fonts.googleapis.com',
-        'https://checkout.stripe.com',
         'https://kit.fontawesome.com'
       ],
       fontSrc: ["'self'", 'https://fonts.gstatic.com', 'https://ka-f.fontawesome.com'],
-      imgSrc: ["'self'", 'https://*.stripe.com', 'https://res.cloudinary.com'],
+      imgSrc: ["'self'"],
       baseUri: ["'self'"],
     },
   })
