@@ -32,7 +32,8 @@ app.use(
       scriptSrc: ["'self'", "example.com"],
       objectSrc: ["'none'"],
       scriptSrcElem: ["'self'", "https://kit.fontawesome.com/"],
-      styleSrcElem: ["'self'", "'https://fonts.googleapis.com/"],
+      styleSrcElem: ["'self'", "https://fonts.googleapis.com/"],
+      connectSrc: ["'self'", "https://ka-f.fontawesome.com"],
       upgradeInsecureRequests: [],
     },
   })
