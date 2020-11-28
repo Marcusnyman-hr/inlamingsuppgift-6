@@ -36,8 +36,8 @@ app.use(
       scriptSrc: ["'self'", 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
-        'https://fonts.googleapis.com',
-        'https://kit.fontawesome.com'
+        "https://fonts.googleapis.com",
+        "https://kit.fontawesome.com"
       ],
       fontSrc: ["'self'", 'https://fonts.gstatic.com', 'https://ka-f.fontawesome.com'],
       imgSrc: ["'self'"],
