@@ -29,7 +29,7 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "example.com"],
+      scriptSrc: ["'self'", "https://kit.fontawesome.com"],
       objectSrc: ["'none'"],
       scriptSrcElem: ["'self'", "https://kit.fontawesome.com"],
       styleSrcElem: ["'self'", "https://fonts.googleapis.com", "https://kit.fontawesome.com"],
