@@ -33,7 +33,7 @@ app.use(
       connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
       frameSrc: ["'self'"],
       childSrc: ["'self'"],
-      scriptSrc: ["'self'", 'https://kit.fontawesome.com'],
+      scriptSrc: ["'self'", "'unsafe-eval'", 'https://kit.fontawesome.com'],
       styleSrc: [
         "'self'",
         "https://fonts.googleapis.com",
