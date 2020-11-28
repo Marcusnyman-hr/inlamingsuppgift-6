@@ -26,26 +26,38 @@ mongoose.connect(process.env.DB_CONNECT,
 app.use(express.json())
 app.use(cors());
 app.use(
-  // [
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
-      frameSrc: ["'self'"],
-      childSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-eval'", 'https://kit.fontawesome.com'],
-      styleSrc: [
-        "'self'",
-        "https://fonts.googleapis.com",
-        "https://kit.fontawesome.com"
-      ],
-      fontSrc: ["'self'", 'https://fonts.gstatic.com', 'https://ka-f.fontawesome.com'],
-      imgSrc: ["'self'"],
-      baseUri: ["'self'"],
+      scriptSrc: ["'self'", "example.com"],
+      objectSrc: ["'none'"],
+      upgradeInsecureRequests: [],
     },
   })
-  // ]
-)
+);
+
+
+
+
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
+//       frameSrc: ["'self'"],
+//       childSrc: ["'self'"],
+//       scriptSrc: ["'self'", "'unsafe-eval'", 'https://kit.fontawesome.com'],
+//       styleSrc: [
+//         "'self'",
+//         "https://fonts.googleapis.com",
+//         "https://kit.fontawesome.com"
+//       ],
+//       fontSrc: ["'self'", 'https://fonts.gstatic.com', 'https://ka-f.fontawesome.com'],
+//       imgSrc: ["'self'"],
+//       baseUri: ["'self'"],
+//     },
+//   })
+// )
 // app.use((req, res, next) => {
 //   console.log('CSP', res.get('Content-Security-Policy'));
 //   next();
