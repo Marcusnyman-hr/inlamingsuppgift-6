@@ -32,7 +32,7 @@ app.use(
       scriptSrc: ["'self'", "'unsafe-inline'", "https://kit.fontawesome.com"],
       objectSrc: ["'none'"],
       scriptSrcElem: ["'self'", "https://kit.fontawesome.com"],
-      styleSrcElem: ["'self'", "https://fonts.googleapis.com", "https://kit.fontawesome.com"],
+      styleSrcElem: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://kit.fontawesome.com"],
       connectSrc: ["'self'", "https://ka-f.fontawesome.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
       upgradeInsecureRequests: [],
