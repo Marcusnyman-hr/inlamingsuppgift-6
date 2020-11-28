@@ -4,7 +4,7 @@ import { AuthTokenContext } from '../../context/Auth-token-context/AuthTokenCont
 
 import './money-header.styles.scss';
 //Header component for income/expenses
-function MoneyHeader({toggleAddEntry, history}) {
+function MoneyHeader({toggleAddEntry, history, toggleDeleteAccount}) {
   const [authToken, setAuthToken] = useContext(AuthTokenContext)
 
   function logOut() {
@@ -17,6 +17,9 @@ function MoneyHeader({toggleAddEntry, history}) {
       <ul className='money-header-menu'>
         <li className='money-header-menu-item' onClick={toggleAddEntry}>
           Add new entry
+        </li>
+        <li className='money-header-menu-item' onClick={toggleDeleteAccount}>
+          Delete my account
         </li>
         <li className='money-header-menu-item' onClick={logOut}>
           Logout

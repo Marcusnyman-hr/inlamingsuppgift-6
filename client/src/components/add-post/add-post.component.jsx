@@ -52,11 +52,8 @@ function AddPost({toggleAddEntry, setEditEntry, type, addEntry, entryToEdit, edi
     }
     //toggle bool to close the add-post form
     toggleAddEntry();
-
-    
-
-  //Handles form changes
   }
+    //Handles form changes
   function handleChange(event) {
     event.preventDefault();
     const {name, value} = event.target;

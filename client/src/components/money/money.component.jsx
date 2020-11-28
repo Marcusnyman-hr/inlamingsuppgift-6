@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { AuthTokenContext } from '../../context/Auth-token-context/AuthTokenContext'
+import {withRouter} from 'react-router-dom';
 
 import axios from 'axios';
 import MoneyHeader from '../money-header/money-header.component';
@@ -7,10 +8,11 @@ import DailyExchangeRates from '../daily-exchange-rates/daily-exchange-rates.com
 import MoneyEntry from '../money-entry/money-entry.component';
 import AddPost from '../add-post/add-post.component';
 import MoneySummary from '../money-summary/money-summary.component';
+import DeleteAccount from '../delete-account/delete-account.component';
 
 import './money.styles.scss';
 //Main component for handleing income and expenses
-export default function Money() {
+function Money({history}) {
   //Get authToken from context for fetching data
   const [authToken] = useContext(AuthTokenContext);
 
@@ -21,6 +23,7 @@ export default function Money() {
   const [editEntry, setEditEntry] = useState({
     toggle: false,
   });
+  const [deleteAccountToggle, setDeleteAccountToggle] = useState(false);
 
   //fetch rates and userentries
   useEffect(() => {
@@ -39,8 +42,9 @@ export default function Money() {
     editExistingEntry={editExistingEntry}
     deleteEntry={deleteEntry}
     type='edit'/> : null}
+    {deleteAccountToggle ? <DeleteAccount deleteAccount={deleteAccount} toggleDeleteAccount={toggleDeleteAccount}/> : null}
     <div className='money-container'>
-    <MoneyHeader toggleAddEntry={toggleAddEntry}/>
+    <MoneyHeader toggleAddEntry={toggleAddEntry} toggleDeleteAccount={toggleDeleteAccount}/>
     <div className='income'>
       <h3 className='money-container-h3'>Income</h3>
       
@@ -72,6 +76,25 @@ export default function Money() {
   //toggle add new entry component
   function toggleAddEntry() {
     setAddEntryToggle(!addEntryToggle)
+  }
+  function toggleDeleteAccount() {
+    setDeleteAccountToggle(!deleteAccountToggle)
+  }
+
+  //Delete account
+  function deleteAccount() {
+    const url = '/api/user/deleteuser'
+    const token = authToken.token;
+
+    axios.delete(url,  {headers: {'auth-token': token}})
+      .then((res) => {
+        if (res.status === 200) {  
+        history.push('/')
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+      });
   }
 
   //add a new entry 
@@ -108,7 +131,6 @@ export default function Money() {
     .catch((error) => {
       console.log(error)
     });
-
   }
 
   //Delete entry
@@ -141,7 +163,6 @@ export default function Money() {
         });
         setExpenses(updatedArray)
       }
-
   }
 
   //sort the entries
@@ -199,3 +220,5 @@ export default function Money() {
   }
 
 }
+
+export default withRouter(Money)
