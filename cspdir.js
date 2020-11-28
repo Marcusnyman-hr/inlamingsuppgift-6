@@ -4,7 +4,7 @@ module.exports = {
   objectSrc: ["'none'"],
   scriptSrcElem: ["'self'", "'unsafe-inline'", "https://kit.fontawesome.com"],
   styleSrcElem: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://kit.fontawesome.com"],
-  connectSrc: ["'self'", "https://ka-f.fontawesome.com"],
+  connectSrc: ["'self'", "https://ka-f.fontawesome.com", "https://v6.exchangerate-api.com"],
   fontSrc: ["'self'", "https://fonts.gstatic.com", "https://ka-f.fontawesome.com"],
   upgradeInsecureRequests: [],
 }
