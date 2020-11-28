@@ -43,6 +43,6 @@ app.get('*', function (request, response) {
 });
 
 //start the server
-app.listen(PORT, () => console.log(`Server started on ${PORT}`));
+module.exports = app.listen(PORT, () => console.log(`Server started on ${PORT}`));
 
-//module.exports = 
+
