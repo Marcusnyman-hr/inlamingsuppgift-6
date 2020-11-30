@@ -142,7 +142,7 @@ function Money({history}) {
       account
     }
 
-    axios.post(url, entryToDelete, {headers: {'auth-token': token}})
+    axios.delete(url, entryToDelete, {headers: {'auth-token': token}})
       .then((res) => {
         if (res.status === 200) {
         }

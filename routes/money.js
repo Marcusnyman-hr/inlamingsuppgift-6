@@ -83,7 +83,7 @@ router.post('/add', verify, async (req, res) => {
 })
 
 //Delete specific entry
-router.post('/delete', verify, async (req, res) => {
+router.delete('/delete', verify, async (req, res) => {
   const { id, account } = req.body;
   //Find user from jwt token
   const user = await User.findOne({ _id: req.user._id })
