@@ -4,42 +4,42 @@ const User = require('../model/User');
 
 //Get all entries
 router.get('/', verify, async (req, res) => {
-  const user = await User.findOne({_id: req.user._id});
+  const user = await User.findOne({ _id: req.user._id });
   const money = {
-    income:[...user.income],
-    expenses:[...user.expenses]
+    income: [...user.income],
+    expenses: [...user.expenses]
   }
   res.status(200).send(money)
 })
 
 //Get specific entry
 router.get('/:account/:id', verify, async (req, res) => {
-  const user = await User.findOne({_id: req.user._id})
+  const user = await User.findOne({ _id: req.user._id })
   try {
-    if(req.params.account === 'income' || req.params.account === 'expense') {
+    if (req.params.account === 'income' || req.params.account === 'expense') {
       let post;
       if (req.params.account === 'income') {
         post = user.income.find(entry => entry.id === req.params.id);
-        }
-        if (req.params.account === 'expense') {
+      }
+      if (req.params.account === 'expense') {
         post = user.expenses.find(entry => entry.id === req.params.id);
-        }
-        if(!post) {
-          throw 'no entry found'
-        }
-        res.status(200).send(post)
+      }
+      if (!post) {
+        throw 'no entry found'
+      }
+      res.status(200).send(post)
     } else {
       throw 'faulty account type'
     }
-  }catch(err) {
+  } catch (err) {
     res.status(400).send(err)
   }
 })
 
 //update entry 
-router.post('/update/:account/',verify, async (req,res) => {
-  const user = await User.findOne({_id: req.user._id});
-  try{
+router.put('/update/:account/', verify, async (req, res) => {
+  const user = await User.findOne({ _id: req.user._id });
+  try {
     const updatedPost = req.body;
     if (req.params.account === 'expense') {
       let expenses = user.expenses;
@@ -59,19 +59,19 @@ router.post('/update/:account/',verify, async (req,res) => {
       user.save();
       res.status(200).send('post updated');
     }
-  } catch(err) {
+  } catch (err) {
     res.status(400).send(err)
   }
-  
+
 })
 
 
 //Create a new entry
 router.post('/add', verify, async (req, res) => {
-  const {account, title, desc, amount, currency, type, id, date} = req.body;
+  const { account, title, desc, amount, currency, type, id, date } = req.body;
   //Find user from jwt token
-  const user = await User.findOne({_id: req.user._id})
-  const newPost = {id, account, title, desc, amount, currency, type, date}
+  const user = await User.findOne({ _id: req.user._id })
+  const newPost = { id, account, title, desc, amount, currency, type, date }
   if (account === 'income') {
     user.income = [...user.income, newPost]
   }
@@ -84,9 +84,9 @@ router.post('/add', verify, async (req, res) => {
 
 //Delete specific entry
 router.post('/delete', verify, async (req, res) => {
-  const {id, account} = req.body;
+  const { id, account } = req.body;
   //Find user from jwt token
-  const user = await User.findOne({_id: req.user._id})
+  const user = await User.findOne({ _id: req.user._id })
   if (account === 'income') {
     const updatedArray = user.income.filter((entry) => {
       return entry.id !== id

@@ -122,7 +122,7 @@ function Money({history}) {
   function editExistingEntry(updatedEntry){
     const url = `/api/money/update/${updatedEntry.account}`
     const token = authToken.token;
-    axios.post(url, updatedEntry, {headers: {'auth-token': token}})
+    axios.put(url, updatedEntry, {headers: {'auth-token': token}})
     .then((res) => {
       if (res.status === 200) {
         fetchUsersEntries();
